@@ -1,0 +1,21 @@
+.car-btn-details{
+    -fx-background-color: #1c1828;
+    -fx-border-color: #7c3aed;
+    -fx-border-width: 1;
+    -fx-text-fill: #c4b5fd;
+}
+
+.car-btn-details:hover{
+    -fx-background-color: #2a1f42;
+    -fx-border-color: #8b5cf6;
+}
+
+.car-details-dialog .header-panel .label{
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f5f3ff;
+}
+
+.car-details-grid{
+    -fx-min-width: 320;
+}

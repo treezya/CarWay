@@ -1,0 +1,1365 @@
+
+.root{
+    -fx-background-color: #0f0f18;
+    -fx-font-family: "Segoe UI", system-ui;
+}
+
+.text-field, .password-field{
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-padding: 8 10 8 10;
+    -fx-background-color: #1c1828;
+    -fx-text-fill: #ede9fe;
+    -fx-prompt-text-fill: #7c6a9a;
+    -fx-border-color: #3b2d55;
+}
+
+.text-field:focused, .password-field:focused{
+    -fx-border-color: #8b5cf6;
+    -fx-effect: dropshadow(gaussian, rgba(139,92,246,0.35), 10, 0.3, 0, 0);
+}
+
+.button{
+    -fx-background-color: linear-gradient(to right, #5b21b6, #7c3aed);
+    -fx-text-fill: #f5f3ff;
+    -fx-background-radius: 8;
+    -fx-font-weight: bold;
+    -fx-padding: 8 20 8 20;
+}
+
+.button:hover{
+    -fx-background-color: linear-gradient(to right, #6d28d9, #8b5cf6);
+}
+
+.button.secondary{
+    -fx-background-color: #1c1828;
+    -fx-border-color: #6d28d9;
+    -fx-border-radius: 8;
+    -fx-text-fill: #c4b5fd;
+}
+
+.label{
+    -fx-text-fill: #ddd6fe;
+    -fx-font-size: 14px;
+}
+
+.tab-pane{
+    -fx-background-color: transparent;
+}
+
+.tab-pane .tab-header-area .tab{
+    -fx-background-color: #221c30;
+    -fx-background-radius: 8 8 0 0;
+}
+
+.tab-pane .tab:selected{
+    -fx-background-color: #2e1065;
+}
+
+.hyperlink{
+    -fx-text-fill: #a78bfa;
+}
+
+
+.auth-card{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+    -fx-effect: none;
+}
+
+.auth-title{
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f5f3ff;
+    -fx-alignment: center;
+}
+
+.auth-subtitle{
+    -fx-text-fill: #475569;
+    -fx-font-size: 12px;
+}
+
+.brand-title{
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.brand-highlight{
+    -fx-text-fill: #a78bfa;
+}
+
+.start-title{
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.start-subtitle{
+    -fx-text-fill: #475569;
+    -fx-font-size: 13px;
+}
+
+
+.start-screen{
+    -fx-background-color: linear-gradient(145deg, #09090f 0%, #1a0a2e 40%, #2e1065 100%);
+}
+
+.start-logo{
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f8fafc;
+}
+
+.start-headline{
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e2e8f0;
+}
+
+.start-lead{
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 14px;
+}
+
+.start-feature-chip{
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255,255,255,0.15);
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+}
+
+.start-chip-title{
+    -fx-text-fill: #f8fafc;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.start-chip-desc{
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 11px;
+}
+
+.start-auth-card{
+    -fx-background-color: #1a1628;
+    -fx-background-radius: 16;
+    -fx-border-color: #5b21b6;
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(91,33,182,0.35), 20, 0.25, 0, 4);
+}
+
+.premium-start .start-auth-card .auth-title,
+.start-auth-card .auth-title{
+    -fx-text-fill: #f5f3ff;
+}
+
+.premium-start .start-auth-card .auth-subtitle,
+.start-auth-card .auth-subtitle{
+    -fx-text-fill: #a78bfa;
+}
+
+.auth-screen{
+    -fx-background-color: linear-gradient(145deg, #09090f, #1e1230, #4c1d95);
+}
+
+.auth-panel{
+    -fx-background-color: #1a1628;
+    -fx-background-radius: 16;
+    -fx-border-color: #5b21b6;
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(91,33,182,0.35), 20, 0.25, 0, 4);
+    -fx-max-width: 480;
+}
+
+.auth-panel .auth-title{
+    -fx-text-fill: #f5f3ff;
+}
+
+.auth-panel .auth-subtitle{
+    -fx-text-fill: #a78bfa;
+}
+
+.credit-panel{
+    -fx-max-width: 520;
+}
+
+.car-btn-details{
+    -fx-background-color: #1c1828;
+    -fx-border-color: #7c3aed;
+    -fx-border-width: 1;
+    -fx-text-fill: #c4b5fd;
+}
+
+.car-btn-details:hover{
+    -fx-background-color: #2a1f42;
+    -fx-border-color: #8b5cf6;
+}
+
+.car-details-dialog .header-panel .label{
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f5f3ff;
+}
+
+.car-details-grid{
+    -fx-min-width: 320;
+}
+
+.services-nav .app-logo{
+    -fx-font-size: 18px;
+}
+
+
+.main-root{
+    -fx-background-color: #0f0f18;
+}
+
+.main-content{
+    -fx-background-color: transparent;
+}
+
+.app-navbar{
+    -fx-background-color: linear-gradient(to right, #09090f, #1a0a2e, #1e1230);
+}
+
+.app-logo{
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f8fafc;
+}
+
+.app-tagline{
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 11px;
+}
+
+.app-phone{
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 13px;
+}
+
+.button.nav-outline{
+    -fx-background-color: transparent;
+    -fx-border-color: #64748b;
+    -fx-border-width: 1;
+    -fx-text-fill: #e2e8f0;
+}
+
+.button.nav-outline:hover{
+    -fx-background-color: rgba(255,255,255,0.08);
+}
+
+.button.nav-services{
+    -fx-background-color: linear-gradient(to right, #059669, #10b981);
+}
+
+.button.nav-outline-light{
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cbd5e1;
+    -fx-border-width: 1;
+    -fx-text-fill: #334155;
+}
+
+.sidebar-panel, .catalog-panel, .checkout-panel{
+    -fx-background-color: #16141f;
+    -fx-background-radius: 14;
+    -fx-padding: 16;
+    -fx-border-color: #2d2440;
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(91,33,182,0.15), 14, 0.2, 0, 2);
+}
+
+.panel-title{
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ede9fe;
+}
+
+.panel-hint, .field-label{
+    -fx-text-fill: #a78bfa;
+    -fx-font-size: 11px;
+}
+
+.field-label{
+    -fx-font-weight: bold;
+}
+
+.catalog-search{
+    -fx-background-color: #1c1828;
+    -fx-border-color: #4c3d6a;
+}
+
+.catalog-scroll{
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-padding: 4;
+}
+
+.catalog-scroll > .viewport{
+    -fx-background-color: transparent;
+}
+
+.checkout-selected-box{
+    -fx-background-color: #221c30;
+    -fx-background-radius: 10;
+    -fx-border-color: #4c3d6a;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+}
+
+.checkout-car-name{
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #c4b5fd;
+}
+
+.checkout-totals{
+    -fx-background-color: #1e1630;
+    -fx-background-radius: 10;
+    -fx-padding: 10 12 10 12;
+    -fx-border-color: #5b21b6;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+}
+
+.checkout-separator{
+    -fx-opacity: 0.4;
+}
+
+.button.checkout-primary{
+    -fx-background-color: linear-gradient(to right, #6d28d9, #8b5cf6);
+    -fx-text-fill: #ffffff;
+    -fx-padding: 12 20 12 20;
+    -fx-font-size: 14px;
+}
+
+.button.checkout-primary:hover{
+    -fx-background-color: linear-gradient(to right, #7c3aed, #a78bfa);
+}
+
+.filters-title{
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.table-view{
+    -fx-background-color: #dbeafe;
+    -fx-background-radius: 16;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: #bfdbfe;
+}
+
+.table-view .column-header, .table-view .filler{
+    -fx-size: 30;
+}
+
+.table-view .table-row-cell{
+    -fx-background-color: transparent;
+}
+
+.table-view .table-row-cell:filled:selected, .table-view .table-row-cell:filled:hover{
+    -fx-background-color: rgba(59,130,246,0.18);
+}
+
+
+.car-card{
+    -fx-background-color: #1a1628;
+    -fx-background-radius: 14;
+    -fx-padding: 12;
+    -fx-border-color: #2d2440;
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(76,29,149,0.2), 10, 0.2, 0, 2);
+}
+
+.car-card:hover{
+    -fx-border-color: #7c3aed;
+}
+
+.car-card-selected{
+    -fx-border-color: #a78bfa;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(139,92,246,0.4), 14, 0.35, 0, 2);
+}
+
+.car-image-frame{
+    -fx-background-color: linear-gradient(to bottom, #2a2038 0%, #1a1628 55%, #12101a 100%);
+    -fx-background-radius: 12;
+    -fx-border-color: #4c3d6a;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-padding: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 10, 0.25, 0, 3);
+    -fx-alignment: center;
+}
+
+.car-image-backdrop{
+    -fx-background-color: transparent;
+    -fx-max-width: -1;
+    -fx-max-height: -1;
+}
+
+.car-image-view{
+    -fx-opacity: 1;
+}
+
+.car-image-empty{
+    -fx-alignment: center;
+}
+
+.car-image-empty-icon{
+    -fx-text-fill: #5b21b6;
+    -fx-font-size: 22px;
+    -fx-opacity: 0.7;
+}
+
+.car-image-empty-label{
+    -fx-text-fill: #6b5b7a;
+    -fx-font-size: 12px;
+}
+
+.car-card:hover .car-image-frame{
+    -fx-border-color: #7c3aed;
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.35), 12, 0.3, 0, 4);
+}
+
+.car-card-selected .car-image-frame{
+    -fx-border-color: #a78bfa;
+    -fx-border-width: 2;
+}
+
+.car-badge-stock{
+    -fx-background-color: rgba(139,92,246,0.2);
+    -fx-text-fill: #c4b5fd;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 3 8 3 8;
+    -fx-background-radius: 6;
+}
+
+.car-badge-fresh{
+    -fx-background-color: rgba(109,40,217,0.35);
+    -fx-text-fill: #ddd6fe;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 3 8 3 8;
+    -fx-background-radius: 6;
+}
+
+.car-badge-rental{
+    -fx-background-color: rgba(168,85,247,0.25);
+    -fx-text-fill: #e9d5ff;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 3 8 3 8;
+    -fx-background-radius: 6;
+}
+
+.car-title{
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f5f3ff;
+}
+
+.car-spec-caption{
+    -fx-text-fill: #8b7aa8;
+    -fx-font-size: 10px;
+}
+
+.car-spec-value{
+    -fx-text-fill: #ddd6fe;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.car-color-line{
+    -fx-text-fill: #a78bfa;
+    -fx-font-size: 11px;
+}
+
+.car-price{
+    -fx-text-fill: #c4b5fd;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+
+.button.car-btn-primary{
+    -fx-background-color: linear-gradient(to right, #6d28d9, #8b5cf6);
+    -fx-padding: 8 12 8 12;
+    -fx-font-size: 12px;
+}
+
+.button.car-btn-secondary{
+    -fx-background-color: transparent;
+    -fx-border-color: #7c3aed;
+    -fx-border-width: 1;
+    -fx-text-fill: #c4b5fd;
+    -fx-padding: 8 12 8 12;
+    -fx-font-size: 12px;
+}
+
+.car-quick-services{
+    -fx-alignment: CENTER;
+}
+
+.car-quick-link{
+    -fx-background-color: transparent;
+    -fx-text-fill: #8b7aa8;
+    -fx-font-size: 10px;
+    -fx-padding: 4 6 4 6;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.car-quick-link:hover{
+    -fx-background-color: rgba(124,58,237,0.2);
+    -fx-text-fill: #c4b5fd;
+}
+
+.car-meta{
+    -fx-text-fill: #475569;
+    -fx-font-size: 11px;
+}
+
+.order-row{
+    -fx-text-fill: #c4b5fd;
+    -fx-font-size: 12px;
+}
+
+.order-total{
+    -fx-text-fill: #f5f3ff;
+    -fx-font-weight: bold;
+}
+
+
+.combo-box.filter-combo{
+    -fx-background-color: #1c1828;
+    -fx-border-color: #5b21b6;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.combo-box.filter-combo .list-cell{
+    -fx-text-fill: #ede9fe;
+    -fx-background-color: transparent;
+}
+
+.combo-box.payment-method{
+    -fx-background-color: #1c1828;
+    -fx-border-color: #7c3aed;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.combo-box.payment-method .list-cell{
+    -fx-text-fill: #ede9fe;
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+}
+
+.button.filter-action{
+    -fx-background-color: linear-gradient(to right, #5b21b6, #7c3aed);
+}
+
+.button.filter-action:hover{
+    -fx-background-color: linear-gradient(to right, #6d28d9, #8b5cf6);
+}
+
+.app-footer{
+    -fx-background-color: #12101a;
+    -fx-border-color: #2d2440 transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
+
+.app-footer .label{
+    -fx-text-fill: #8b7aa8;
+}
+
+
+.premium-services.services-root,
+.premium-catalog.main-root{
+    -fx-background-color: #0f0f18;
+}
+
+.premium-navbar{
+    -fx-background-color: linear-gradient(to right, #09090f, #1a0a2e, #1e1230);
+    -fx-border-color: transparent transparent #7c3aed transparent;
+    -fx-border-width: 0 0 2 0;
+}
+
+.premium-logo{
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f5f3ff;
+    -fx-letter-spacing: 2px;
+}
+
+.catalog-navbar .premium-logo{
+    -fx-letter-spacing: 1px;
+}
+
+.premium-logo-sub{
+    -fx-font-size: 9px;
+    -fx-text-fill: #a78bfa;
+    -fx-letter-spacing: 3px;
+}
+
+.premium-navbar-caption{
+    -fx-text-fill: #8b7aa8;
+    -fx-font-size: 12px;
+}
+
+.button.premium-close{
+    -fx-background-color: transparent;
+    -fx-border-color: #4c3d6a;
+    -fx-border-width: 1;
+    -fx-text-fill: #c4b5fd;
+    -fx-padding: 8 18 8 18;
+    -fx-background-radius: 8;
+}
+
+.button.premium-close:hover{
+    -fx-border-color: #8b5cf6;
+    -fx-text-fill: #ede9fe;
+    -fx-background-color: rgba(124,58,237,0.15);
+}
+
+.premium-vehicle-strip{
+    -fx-background-color: linear-gradient(to right, #12101a, #1a1028, #221538);
+}
+
+.premium-overline{
+    -fx-text-fill: #a78bfa;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1.5px;
+}
+
+.premium-vehicle-name{
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f5f3ff;
+}
+
+.premium-vehicle-meta{
+    -fx-text-fill: #8b7aa8;
+    -fx-font-size: 12px;
+}
+
+.premium-vehicle-price{
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #c4b5fd;
+}
+
+.premium-rental-badge{
+    -fx-text-fill: #ddd6fe;
+    -fx-font-size: 11px;
+    -fx-padding: 4 10 4 10;
+    -fx-background-color: rgba(124,58,237,0.25);
+    -fx-background-radius: 8;
+}
+
+.premium-rental-muted{
+    -fx-text-fill: #6b5b7a;
+    -fx-font-size: 11px;
+}
+
+.premium-contact-strip{
+    -fx-background-color: #16141f;
+    -fx-border-color: #2d2440 transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
+
+.premium-field{
+    -fx-background-color: #1c1828;
+    -fx-border-color: #3b2d55;
+    -fx-text-fill: #ede9fe;
+    -fx-prompt-text-fill: #6b5b7a;
+}
+
+.premium-field:focused{
+    -fx-border-color: #8b5cf6;
+    -fx-effect: dropshadow(gaussian, rgba(139,92,246,0.35), 10, 0.25, 0, 0);
+}
+
+.premium-combo{
+    -fx-background-color: #1c1828;
+    -fx-border-color: #4c3d6a;
+}
+
+.premium-body{
+    -fx-background-color: #0f0f18;
+}
+
+.premium-service-menu{
+    -fx-background-color: #12101a;
+    -fx-border-color: transparent #2d2440 transparent transparent;
+    -fx-border-width: 0 1 0 0;
+}
+
+.premium-menu-title{
+    -fx-text-fill: #c4b5fd;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 2px;
+}
+
+.premium-menu-hint{
+    -fx-text-fill: #6b5b7a;
+    -fx-font-size: 11px;
+    -fx-padding: 0 0 12 0;
+}
+
+.premium-tab-pane{
+    -fx-background-color: transparent;
+    -fx-tab-min-width: 168;
+    -fx-tab-max-width: 168;
+    -fx-open-tab-animation: NONE;
+    -fx-close-tab-animation: NONE;
+}
+
+.premium-tab-pane > .tab-header-area{
+    -fx-background-color: transparent;
+    -fx-padding: 8 0 0 0;
+}
+
+.premium-tab-pane > .tab-header-area > .headers-region > .tab{
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 0 3;
+    -fx-padding: 14 12 14 16;
+}
+
+.premium-tab-pane > .tab-header-area > .headers-region > .tab .tab-label{
+    -fx-text-fill: #8b7aa8;
+    -fx-font-size: 13px;
+}
+
+.premium-tab-pane > .tab-header-area > .headers-region > .tab:selected{
+    -fx-background-color: rgba(124,58,237,0.18);
+    -fx-border-color: transparent transparent transparent #a78bfa;
+}
+
+.premium-tab-pane > .tab-header-area > .headers-region > .tab:selected .tab-label{
+    -fx-text-fill: #f5f3ff;
+    -fx-font-weight: bold;
+}
+
+.premium-tab-pane > .tab-content-area{
+    -fx-background-color: #16141f;
+    -fx-border-color: #2d2440 transparent transparent transparent;
+    -fx-border-width: 0 0 0 1;
+}
+
+.premium-scroll{
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.premium-scroll > .viewport{
+    -fx-background-color: #16141f;
+}
+
+.service-screen{
+    -fx-background-color: #16141f;
+}
+
+.service-screen-content{
+    -fx-max-width: Infinity;
+}
+
+.service-screen-lead{
+    -fx-text-fill: #a78bfa;
+    -fx-font-size: 13px;
+    -fx-line-spacing: 2px;
+}
+
+.service-benefit-chip{
+    -fx-background-color: #221c30;
+    -fx-text-fill: #c4b5fd;
+    -fx-font-size: 11px;
+    -fx-padding: 6 12 6 12;
+    -fx-background-radius: 20;
+    -fx-border-color: #3b2d55;
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+}
+
+.service-benefit-accent,
+.service-benefit-gold{
+    -fx-background-color: rgba(109,40,217,0.35);
+    -fx-text-fill: #ede9fe;
+    -fx-border-color: #8b5cf6;
+    -fx-font-weight: bold;
+}
+
+.service-fields-card{
+    -fx-background-color: #1c1828;
+    -fx-background-radius: 12;
+    -fx-border-color: #3b2d55;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(91,33,182,0.2), 12, 0.2, 0, 2);
+}
+
+.service-field-label{
+    -fx-text-fill: #a78bfa;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.service-price-premium{
+    -fx-background-color: linear-gradient(to right, #1a1028, #2e1065, #3b0764);
+    -fx-background-radius: 12;
+    -fx-border-color: #5b21b6;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+}
+
+.service-price-value{
+    -fx-text-fill: #e9d5ff;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.service-price-caption{
+    -fx-text-fill: #8b7aa8;
+    -fx-font-size: 12px;
+}
+
+.button.premium-cta{
+    -fx-background-color: linear-gradient(to right, #5b21b6, #7c3aed, #8b5cf6);
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 14 32 14 32;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.45), 14, 0.35, 0, 2);
+}
+
+.button.premium-cta:hover{
+    -fx-background-color: linear-gradient(to right, #6d28d9, #8b5cf6, #a78bfa);
+}
+
+.button.premium-preset{
+    -fx-background-color: #1c1828;
+    -fx-border-color: #6d28d9;
+    -fx-border-width: 1;
+    -fx-text-fill: #c4b5fd;
+    -fx-padding: 8 16 8 16;
+    -fx-background-radius: 8;
+}
+
+.button.premium-preset:hover{
+    -fx-background-color: rgba(124,58,237,0.25);
+    -fx-text-fill: #f5f3ff;
+}
+
+.premium-bookings-panel{
+    -fx-background-color: #12101a;
+    -fx-border-color: transparent transparent transparent #2d2440;
+    -fx-border-width: 0 0 0 1;
+}
+
+.premium-bookings-heading{
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f5f3ff;
+}
+
+.premium-empty-hint{
+    -fx-text-fill: #6b5b7a;
+    -fx-font-size: 11px;
+    -fx-font-style: italic;
+}
+
+.premium-bookings-list{
+    -fx-background-color: #0f0d14;
+    -fx-background-radius: 10;
+    -fx-border-color: #2d2440;
+    -fx-border-radius: 10;
+    -fx-padding: 6;
+}
+
+.premium-bookings-list .list-cell:filled:selected{
+    -fx-background-color: rgba(124,58,237,0.15);
+}
+
+.premium-booking-cell{
+    -fx-background-color: #1a1628;
+    -fx-background-radius: 10;
+    -fx-border-color: #3b2d55;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 12 14 12 14;
+}
+
+.premium-booking-cell .booking-cell-type{
+    -fx-text-fill: #c4b5fd;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.premium-booking-cell .booking-cell-summary{
+    -fx-text-fill: #8b7aa8;
+    -fx-font-size: 11px;
+}
+
+.premium-booking-cell .booking-cell-status{
+    -fx-text-fill: #ddd6fe;
+    -fx-background-color: rgba(124,58,237,0.3);
+    -fx-padding: 3 10 3 10;
+    -fx-background-radius: 6;
+}
+
+.premium-status-strip{
+    -fx-background-color: #1e1630;
+    -fx-background-radius: 8;
+    -fx-border-color: #5b21b6;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+.premium-status-text{
+    -fx-text-fill: #a78bfa;
+    -fx-font-size: 11px;
+}
+
+.button.premium-cta.compact-cta{
+    -fx-padding: 9 20 9 20;
+    -fx-font-size: 12px;
+}
+
+.catalog-navbar{
+    -fx-border-width: 0 0 2 0;
+}
+
+.premium-start.start-screen{
+    -fx-background-color: linear-gradient(160deg, #09090f 0%, #1a0a2e 50%, #4c1d95 100%);
+}
+
+.premium-start .start-headline{
+    -fx-text-fill: #f5f3ff;
+}
+
+.premium-start .start-lead{
+    -fx-text-fill: #a78bfa;
+}
+
+.premium-start .start-feature-chip{
+    -fx-background-color: rgba(91,33,182,0.2);
+    -fx-border-color: rgba(139,92,246,0.45);
+}
+
+.premium-start .start-chip-title{
+    -fx-text-fill: #c4b5fd;
+}
+
+.premium-start .start-chip-desc{
+    -fx-text-fill: #8b7aa8;
+}
+
+.premium-start .start-auth-card{
+    -fx-background-color: #1a1628;
+    -fx-border-color: #7c3aed transparent transparent transparent;
+    -fx-border-width: 3 0 0 0;
+}
+
+
+.services-top-block{
+    -fx-background-color: #16141f;
+    -fx-border-color: transparent transparent #2d2440 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.services-page-title{
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f5f3ff;
+}
+
+.services-page-car{
+    -fx-font-size: 15px;
+    -fx-text-fill: #c4b5fd;
+}
+
+.services-page-meta{
+    -fx-text-fill: #8b7aa8;
+    -fx-font-size: 12px;
+}
+
+.services-page-price{
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e9d5ff;
+}
+
+.services-page-badge{
+    -fx-font-size: 11px;
+    -fx-text-fill: #a78bfa;
+}
+
+.services-form-panel{
+    -fx-background-color: #16141f;
+    -fx-background-radius: 12;
+    -fx-border-color: #2d2440;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+}
+
+.services-tab-top{
+    -fx-background-color: transparent;
+    -fx-tab-min-width: 100;
+}
+
+.services-tab-top .tab-header-area .tab{
+    -fx-background-color: #221c30;
+    -fx-background-radius: 8 8 0 0;
+    -fx-padding: 10 18 10 18;
+}
+
+.services-tab-top .tab-header-area .tab:selected{
+    -fx-background-color: #2e1065;
+}
+
+.services-tab-top .tab-header-area .tab .tab-label{
+    -fx-text-fill: #a78bfa;
+}
+
+.services-tab-top .tab-header-area .tab:selected .tab-label{
+    -fx-text-fill: #f5f3ff;
+    -fx-font-weight: bold;
+}
+
+.services-tab-top .tab-content-area{
+    -fx-background-color: #16141f;
+}
+
+.service-tab-body{
+    -fx-background-color: #16141f;
+}
+
+.service-tab-hint{
+    -fx-text-fill: #8b7aa8;
+    -fx-font-size: 13px;
+}
+
+.service-tab-price-line{
+    -fx-text-fill: #c4b5fd;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.services-side-panel{
+    -fx-background-color: #12101a;
+    -fx-background-radius: 12;
+    -fx-border-color: #2d2440;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+}
+
+.services-side-title{
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ede9fe;
+}
+
+
+.services-root{
+    -fx-background-color: #0f0f18;
+}
+
+.services-hero-panel{
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.06), 10, 0.15, 0, 2);
+}
+
+.services-section-label{
+    -fx-text-fill: #64748b;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+.services-inner-separator{
+    -fx-opacity: 0.35;
+}
+
+.services-car-name{
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.services-car-meta{
+    -fx-text-fill: #475569;
+    -fx-font-size: 12px;
+}
+
+.services-car-price{
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1d4ed8;
+}
+
+.services-rental-available{
+    -fx-text-fill: #047857;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 3 10 3 10;
+    -fx-background-color: #ecfdf5;
+    -fx-background-radius: 8;
+}
+
+.services-rental-unavailable{
+    -fx-text-fill: #64748b;
+    -fx-font-size: 11px;
+}
+
+.services-field-label{
+    -fx-text-fill: #334155;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.services-hint{
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 11px;
+}
+
+.services-body{
+    -fx-background-color: transparent;
+}
+
+.services-main-card{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.08), 14, 0.18, 0, 2);
+}
+
+.services-panel-heading{
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.services-panel-sub{
+    -fx-text-fill: #64748b;
+    -fx-font-size: 12px;
+}
+
+.services-tab-pane{
+    -fx-background-color: transparent;
+    -fx-tab-min-width: 128;
+    -fx-tab-min-height: 36;
+}
+
+.services-tab-pane .tab-header-area{
+    -fx-padding: 0 0 8 0;
+}
+
+.services-tab-pane .tab{
+    -fx-background-color: #f1f5f9;
+    -fx-background-radius: 8 8 0 0;
+    -fx-padding: 8 16 8 16;
+}
+
+.services-tab-pane .tab:selected{
+    -fx-background-color: #ffffff;
+    -fx-font-weight: bold;
+    -fx-border-color: #2563eb transparent transparent transparent;
+    -fx-border-width: 3 0 0 0;
+}
+
+.services-tab-pane .tab-content-area{
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 1 0 0 0;
+}
+
+.services-scroll{
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-padding: 0;
+}
+
+.services-scroll > .viewport{
+    -fx-background-color: transparent;
+}
+
+.service-form-inner{
+    -fx-background-color: transparent;
+}
+
+.service-tab-header{
+    -fx-padding: 0 0 4 0;
+}
+
+.service-step-num{
+    -fx-background-color: #1d4ed8;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 6 10 6 10;
+    -fx-background-radius: 8;
+    -fx-min-width: 32;
+    -fx-alignment: center;
+}
+
+.service-form-title{
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.service-form-desc{
+    -fx-text-fill: #64748b;
+    -fx-font-size: 12px;
+    -fx-wrap-text: true;
+}
+
+.service-price-box{
+    -fx-background-color: linear-gradient(to right, #f0f9ff, #ecfdf5);
+    -fx-background-radius: 12;
+    -fx-border-color: #bae6fd;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+}
+
+.service-price-caption{
+    -fx-text-fill: #64748b;
+    -fx-font-size: 11px;
+}
+
+.service-price-highlight{
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.service-price-text{
+    -fx-text-fill: #0c4a6e;
+    -fx-font-size: 13px;
+}
+
+.service-price-total{
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.date-picker.services-date{
+    -fx-background-color: #ffffff;
+}
+
+.button.services-primary{
+    -fx-background-color: linear-gradient(to right, #1d4ed8, #2563eb);
+    -fx-padding: 13 28 13 28;
+    -fx-font-size: 14px;
+}
+
+.button.services-primary:hover{
+    -fx-background-color: linear-gradient(to right, #1e40af, #1d4ed8);
+}
+
+.button.services-action{
+    -fx-background-color: linear-gradient(to right, #059669, #34d399);
+    -fx-text-fill: #ffffff;
+}
+
+.button.services-action:hover{
+    -fx-background-color: linear-gradient(to right, #047857, #10b981);
+}
+
+.button.services-preset{
+    -fx-padding: 7 16 7 16;
+    -fx-font-size: 12px;
+}
+
+.services-bookings-panel{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.08), 14, 0.18, 0, 2);
+}
+
+.services-bookings-title{
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.services-empty-hint{
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 11px;
+    -fx-font-style: italic;
+}
+
+.services-bookings-list{
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 10;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 10;
+    -fx-padding: 4;
+}
+
+.services-bookings-list .list-cell{
+    -fx-background-color: transparent;
+    -fx-padding: 6 4 6 4;
+}
+
+.services-bookings-list .list-cell:filled:selected{
+    -fx-background-color: #eff6ff;
+}
+
+.booking-cell-box{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 10 12 10 12;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.04), 4, 0.1, 0, 1);
+}
+
+.booking-cell-type{
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e3a8a;
+}
+
+.booking-cell-summary{
+    -fx-font-size: 11px;
+    -fx-text-fill: #475569;
+}
+
+.booking-cell-status{
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #047857;
+    -fx-padding: 2 8 2 8;
+    -fx-background-color: #dcfce7;
+    -fx-background-radius: 6;
+}
+
+.booking-status-badge{
+    -fx-background-color: #f0f9ff;
+    -fx-background-radius: 10;
+    -fx-border-color: #bae6fd;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+}
+
+.booking-status-text{
+    -fx-text-fill: #0369a1;
+    -fx-font-size: 11px;
+}
+
+.services-nav .app-logo{
+    -fx-font-size: 18px;
+}

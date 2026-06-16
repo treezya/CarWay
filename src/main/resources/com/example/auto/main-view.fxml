@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefWidth="1100.0" prefHeight="720.0"
+            xmlns="http://javafx.com/javafx/17.0.6"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.auto.CarWayScreensMain$MainController"
+            stylesheets="@style.css"
+            styleClass="main-root premium-catalog">
+
+    <top>
+        <VBox spacing="0">
+            <HBox spacing="16" alignment="CENTER_LEFT" styleClass="premium-navbar catalog-navbar">
+                <padding>
+                    <Insets top="12" right="24" bottom="12" left="24"/>
+                </padding>
+                <Label text="CarWay" styleClass="premium-logo"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Button text="Выйти" onAction="#goBackToStart" styleClass="button premium-close"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox spacing="16" styleClass="main-content">
+            <padding>
+                <Insets top="16" right="16" bottom="8" left="16"/>
+            </padding>
+
+            <VBox spacing="12" prefWidth="248" minWidth="248" maxWidth="248" styleClass="sidebar-panel">
+                <Label text="Подбор автомобиля" styleClass="panel-title"/>
+                <Label text="Настройте параметры и нажмите «Показать»" styleClass="panel-hint"/>
+
+                <Label text="Марка" styleClass="field-label"/>
+                <ComboBox fx:id="brandCombo" promptText="Любая" styleClass="filter-combo" maxWidth="Infinity"/>
+
+                <Label text="Цена, ₽" styleClass="field-label"/>
+                <HBox spacing="8">
+                    <TextField fx:id="priceFromField" promptText="от" HBox.hgrow="ALWAYS"/>
+                    <TextField fx:id="priceToField" promptText="до" HBox.hgrow="ALWAYS"/>
+                </HBox>
+
+                <Label text="Цвет" styleClass="field-label"/>
+                <ComboBox fx:id="colorCombo" promptText="Любой" styleClass="filter-combo" maxWidth="Infinity"/>
+
+                <Label text="Кузов" styleClass="field-label"/>
+                <ComboBox fx:id="bodyCombo" promptText="Любой" styleClass="filter-combo" maxWidth="Infinity"/>
+
+                <Label text="Топливо" styleClass="field-label"/>
+                <ComboBox fx:id="fuelCombo" promptText="Любое" styleClass="filter-combo" maxWidth="Infinity"/>
+
+                <Label text="Пробег" styleClass="field-label"/>
+                <ComboBox fx:id="mileageCombo" promptText="Любой" styleClass="filter-combo" maxWidth="Infinity"/>
+
+                <Label text="Год выпуска" styleClass="field-label"/>
+                <HBox spacing="8">
+                    <TextField fx:id="yearFromField" promptText="от" HBox.hgrow="ALWAYS"/>
+                    <TextField fx:id="yearToField" promptText="до" HBox.hgrow="ALWAYS"/>
+                </HBox>
+
+                <Button text="Показать" onAction="#filterCars" styleClass="button filter-action" maxWidth="Infinity"/>
+                <Button text="Сбросить" onAction="#resetFilters" styleClass="button nav-outline-light" maxWidth="Infinity"/>
+            </VBox>
+
+            <VBox spacing="12" HBox.hgrow="ALWAYS" styleClass="catalog-panel">
+                <HBox spacing="12" alignment="CENTER_LEFT">
+                    <VBox spacing="2" HBox.hgrow="ALWAYS">
+                        <Label text="Каталог" styleClass="panel-title"/>
+                        <Label fx:id="catalogCountLabel" text="Найдено: 0" styleClass="panel-hint"/>
+                    </VBox>
+                    <TextField fx:id="catalogSearchField" promptText="Поиск по модели или цвету..."
+                               prefWidth="260" styleClass="catalog-search"/>
+                </HBox>
+
+                <ScrollPane fx:id="catalogScrollPane"
+                            fitToWidth="true"
+                            hbarPolicy="NEVER"
+                            vbarPolicy="AS_NEEDED"
+                            styleClass="catalog-scroll"
+                            VBox.vgrow="ALWAYS">
+                    <TilePane fx:id="carTilePane" hgap="16" vgap="16" prefColumns="2"/>
+                </ScrollPane>
+            </VBox>
+
+            <VBox spacing="10" prefWidth="300" minWidth="300" maxWidth="300" styleClass="checkout-panel">
+                <Label text="Оформление" styleClass="panel-title"/>
+                <Label text="Покупка и оплата" styleClass="panel-hint"/>
+
+                <VBox spacing="6" styleClass="checkout-selected-box">
+                    <padding>
+                        <Insets top="10" right="12" bottom="10" left="12"/>
+                    </padding>
+                    <Label text="Выбранный автомобиль" styleClass="field-label"/>
+                    <Label fx:id="selectedCarLabel" text="Выберите авто в каталоге" styleClass="checkout-car-name" wrapText="true"/>
+                </VBox>
+
+                <Separator styleClass="checkout-separator"/>
+
+                <Label text="Данные покупателя" styleClass="field-label"/>
+                <TextField fx:id="customerNameField" promptText="ФИО"/>
+                <TextField fx:id="customerPhoneField" promptText="Телефон"/>
+                <TextField fx:id="customerEmailField" promptText="E-mail"/>
+
+                <Label text="Способ оплаты" styleClass="field-label"/>
+                <ComboBox fx:id="paymentMethodCombo" promptText="Выберите" styleClass="payment-method" maxWidth="Infinity"/>
+
+                <VBox fx:id="cardFieldsBox" spacing="8">
+                    <Label text="Банковская карта" styleClass="field-label"/>
+                    <TextField fx:id="cardNumberField" promptText="Номер карты"/>
+                    <TextField fx:id="cardHolderField" promptText="Имя на карте"/>
+                    <HBox spacing="8">
+                        <TextField fx:id="cardExpiryField" promptText="MM/YY" HBox.hgrow="ALWAYS"/>
+                        <TextField fx:id="cardCvvField" promptText="CVV" prefWidth="80"/>
+                    </HBox>
+                </VBox>
+
+                <VBox spacing="4" styleClass="checkout-totals">
+                    <padding>
+                        <Insets top="8" right="0" bottom="4" left="0"/>
+                    </padding>
+                    <Label fx:id="subtotalLabel" text="Автомобиль: —" styleClass="order-row"/>
+                    <Label fx:id="feesLabel" text="Оформление: 35 000 ₽" styleClass="order-row"/>
+                    <Label fx:id="totalLabel" text="Итого: —" styleClass="order-total"/>
+                </VBox>
+
+                <Button text="Оформить покупку" onAction="#placeOrder"
+                        styleClass="button premium-cta" maxWidth="Infinity"/>
+            </VBox>
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" styleClass="app-footer">
+            <padding>
+                <Insets top="8" right="16" bottom="10" left="16"/>
+            </padding>
+            <Label text="CarWay · Москва · Пн–Сб 9:00–20:00 · carway.ru · Сервис и аренда онлайн"/>
+        </HBox>
+    </bottom>
+</BorderPane>

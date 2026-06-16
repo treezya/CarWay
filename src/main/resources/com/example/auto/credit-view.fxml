@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="560.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/17.0.6"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.auto.CarWayScreensExtra$CreditController"
+            stylesheets="@style.css"
+            styleClass="auth-screen">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" styleClass="app-navbar" spacing="12">
+            <padding>
+                <Insets top="12" right="20" bottom="12" left="20"/>
+            </padding>
+            <Label text="CarWay" styleClass="app-logo"/>
+            <Label text="Кредит на автомобиль" styleClass="app-tagline"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="18" styleClass="auth-panel credit-panel">
+            <padding>
+                <Insets top="28" right="40" bottom="28" left="40"/>
+            </padding>
+            <Label text="Кредитная заявка" styleClass="auth-title"/>
+            <Label text="Заполните данные заёмщика для расчёта и отправки заявки"
+                   styleClass="auth-subtitle" wrapText="true"/>
+
+            <VBox spacing="10" maxWidth="420">
+                <Label fx:id="creditCarLabel" text="Автомобиль: —" styleClass="auth-subtitle" wrapText="true"/>
+                <TextField fx:id="fullNameField" promptText="ФИО заёмщика" maxWidth="Infinity"/>
+                <TextField fx:id="passportField" promptText="Серия и номер паспорта" maxWidth="Infinity"/>
+                <TextField fx:id="incomeField" promptText="Ежемесячный доход (₽)" maxWidth="Infinity"/>
+                <TextField fx:id="workPlaceField" promptText="Место работы" maxWidth="Infinity"/>
+                <HBox spacing="10">
+                    <TextField fx:id="initialPaymentField" promptText="Первый взнос (₽)" HBox.hgrow="ALWAYS"/>
+                    <TextField fx:id="monthsField" promptText="Срок (мес.)" prefWidth="120"/>
+                </HBox>
+                <VBox spacing="4" styleClass="credit-quote-box">
+                    <Label text="Расчёт кредита" styleClass="field-label"/>
+                    <Label fx:id="creditLoanLabel" text="Сумма кредита: —" styleClass="order-row"/>
+                    <Label fx:id="creditMonthlyLabel" text="Ежемесячный платёж: —" styleClass="order-row"/>
+                    <Label fx:id="creditOverpayLabel" text="Переплата: —" styleClass="order-total"/>
+                    <Label fx:id="creditRateHintLabel" text="Ставка 12% годовых, аннуитетный платёж"
+                           styleClass="auth-subtitle" wrapText="true"/>
+                </VBox>
+            </VBox>
+
+            <HBox spacing="12" alignment="CENTER">
+                <Button text="Назад в каталог" onAction="#goBack" styleClass="button nav-outline-light"
+                        prefWidth="180"/>
+                <Button text="Отправить заявку" onAction="#submitCredit"
+                        styleClass="button checkout-primary" prefWidth="200"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

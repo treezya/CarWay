@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="720.0" prefWidth="960.0"
+            xmlns="http://javafx.com/javafx/17.0.6"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.auto.CarWayScreensExtra$ServicesController"
+            stylesheets="@style.css"
+            styleClass="services-root premium-services">
+
+    <top>
+        <VBox spacing="12" styleClass="services-top-block">
+            <padding>
+                <Insets top="14" right="20" bottom="14" left="20"/>
+            </padding>
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <Label text="Услуги" styleClass="services-page-title"/>
+                <Label fx:id="carNameLabel" text="—" styleClass="services-page-car" HBox.hgrow="ALWAYS"/>
+                <Button text="Закрыть" onAction="#closeWindow" styleClass="button premium-close"/>
+            </HBox>
+            <HBox spacing="16" alignment="CENTER_LEFT">
+                <Label fx:id="carMetaLabel" text="—" styleClass="services-page-meta" HBox.hgrow="ALWAYS"/>
+                <Label fx:id="carPriceLabel" text="—" styleClass="services-page-price"/>
+                <Label fx:id="rentalBadgeLabel" text="—" styleClass="services-page-badge"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="sharedCustomerNameField" promptText="ФИО"
+                           HBox.hgrow="ALWAYS" maxWidth="Infinity" styleClass="premium-field"/>
+                <TextField fx:id="sharedCustomerPhoneField" promptText="Телефон"
+                           prefWidth="200" styleClass="premium-field"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox spacing="16" styleClass="premium-body">
+            <padding>
+                <Insets top="0" right="16" bottom="16" left="16"/>
+            </padding>
+
+            <VBox spacing="0" HBox.hgrow="ALWAYS" styleClass="services-form-panel">
+                <TabPane fx:id="servicesTabPane" tabClosingPolicy="UNAVAILABLE"
+                         styleClass="services-tab-top" VBox.vgrow="ALWAYS">
+                    <Tab text="Тест-драйв">
+                        <content>
+                            <VBox spacing="16" styleClass="service-tab-body">
+                                <padding>
+                                    <Insets top="20" right="24" bottom="24" left="24"/>
+                                </padding>
+                                <Label text="Бесплатная пробная поездка. Выберите дату, время и маршрут."
+                                       styleClass="service-tab-hint" wrapText="true"/>
+                                <GridPane hgap="12" vgap="12">
+                                    <columnConstraints>
+                                        <ColumnConstraints minWidth="100" prefWidth="100"/>
+                                        <ColumnConstraints hgrow="ALWAYS"/>
+                                    </columnConstraints>
+                                    <Label text="Дата" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="service-field-label"/>
+                                    <DatePicker fx:id="testDriveDatePicker" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                                                maxWidth="Infinity" styleClass="premium-field"/>
+                                    <Label text="Время" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="service-field-label"/>
+                                    <ComboBox fx:id="testDriveTimeCombo" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                                              maxWidth="Infinity" styleClass="premium-combo"/>
+                                    <Label text="Маршрут" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="service-field-label"/>
+                                    <ComboBox fx:id="testDriveRouteCombo" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                                              maxWidth="Infinity" styleClass="premium-combo"/>
+                                </GridPane>
+                                <Label text="Стоимость: бесплатно" styleClass="service-tab-price-line"/>
+                                <Button text="Записаться" onAction="#submitTestDrive"
+                                        maxWidth="Infinity" styleClass="button premium-cta"/>
+                            </VBox>
+                        </content>
+                    </Tab>
+                    <Tab text="ТО">
+                        <content>
+                            <VBox spacing="16" styleClass="service-tab-body">
+                                <padding>
+                                    <Insets top="20" right="24" bottom="24" left="24"/>
+                                </padding>
+                                <Label text="Запись на техническое обслуживание."
+                                       styleClass="service-tab-hint" wrapText="true"/>
+                                <GridPane hgap="12" vgap="12">
+                                    <columnConstraints>
+                                        <ColumnConstraints minWidth="100" prefWidth="100"/>
+                                        <ColumnConstraints hgrow="ALWAYS"/>
+                                    </columnConstraints>
+                                    <Label text="Дата" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="service-field-label"/>
+                                    <DatePicker fx:id="maintenanceDatePicker" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                                                maxWidth="Infinity" styleClass="premium-field"/>
+                                    <Label text="Работы" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="service-field-label"/>
+                                    <ComboBox fx:id="maintenanceTypeCombo" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                                              maxWidth="Infinity" styleClass="premium-combo"/>
+                                </GridPane>
+                                <HBox spacing="8" alignment="CENTER_LEFT">
+                                    <Label text="Ориентир:" styleClass="service-field-label"/>
+                                    <Label fx:id="maintenancePriceLabel" text="—" styleClass="service-tab-price-line"/>
+                                </HBox>
+                                <Button text="Записаться" onAction="#submitMaintenance"
+                                        maxWidth="Infinity" styleClass="button premium-cta"/>
+                            </VBox>
+                        </content>
+                    </Tab>
+                    <Tab text="Шиномонтаж">
+                        <content>
+                            <VBox spacing="16" styleClass="service-tab-body">
+                                <padding>
+                                    <Insets top="20" right="24" bottom="24" left="24"/>
+                                </padding>
+                                <Label text="Сезонная переобувка и балансировка."
+                                       styleClass="service-tab-hint" wrapText="true"/>
+                                <GridPane hgap="12" vgap="12">
+                                    <columnConstraints>
+                                        <ColumnConstraints minWidth="100" prefWidth="100"/>
+                                        <ColumnConstraints hgrow="ALWAYS"/>
+                                    </columnConstraints>
+                                    <Label text="Дата" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="service-field-label"/>
+                                    <DatePicker fx:id="tireDatePicker" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                                                maxWidth="Infinity" styleClass="premium-field"/>
+                                    <Label text="Сезон" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="service-field-label"/>
+                                    <ComboBox fx:id="tireSeasonCombo" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                                              maxWidth="Infinity" styleClass="premium-combo"/>
+                                </GridPane>
+                                <HBox spacing="8" alignment="CENTER_LEFT">
+                                    <Label text="Ориентир:" styleClass="service-field-label"/>
+                                    <Label fx:id="tirePriceLabel" text="—" styleClass="service-tab-price-line"/>
+                                </HBox>
+                                <Button text="Записаться" onAction="#submitTireService"
+                                        maxWidth="Infinity" styleClass="button premium-cta"/>
+                            </VBox>
+                        </content>
+                    </Tab>
+                    <Tab text="Аренда">
+                        <content>
+                            <VBox spacing="16" styleClass="service-tab-body">
+                                <padding>
+                                    <Insets top="20" right="24" bottom="24" left="24"/>
+                                </padding>
+                                <Label fx:id="rentalAvailabilityLabel" text="—"
+                                       styleClass="service-tab-hint" wrapText="true"/>
+                                <Label text="Срок" styleClass="service-field-label"/>
+                                <HBox fx:id="rentalDaysPresets" spacing="8"/>
+                                <TextField fx:id="rentalDaysField" promptText="Дней (1–30)" styleClass="premium-field"/>
+                                <VBox spacing="4">
+                                    <Label fx:id="rentalRateLabel" text="—" styleClass="service-tab-hint"/>
+                                    <Label fx:id="rentalTotalLabel" text="—" styleClass="service-tab-price-line"/>
+                                </VBox>
+                                <Button fx:id="rentalSubmitButton" text="Оформить"
+                                        onAction="#submitRental" maxWidth="Infinity"
+                                        styleClass="button premium-cta"/>
+                            </VBox>
+                        </content>
+                    </Tab>
+                </TabPane>
+            </VBox>
+
+            <VBox spacing="10" prefWidth="260" minWidth="240" styleClass="services-side-panel">
+                <padding>
+                    <Insets top="8" right="12" bottom="12" left="0"/>
+                </padding>
+                <Label text="Заявки" styleClass="services-side-title"/>
+                <Label fx:id="bookingsCountLabel" text="Пока пусто" styleClass="premium-menu-hint"/>
+                <ListView fx:id="bookingsListView" VBox.vgrow="ALWAYS" styleClass="premium-bookings-list"/>
+                <Label fx:id="bookingsEmptyHint" text="Оформите услугу — она появится в списке"
+                       wrapText="true" styleClass="premium-empty-hint"/>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

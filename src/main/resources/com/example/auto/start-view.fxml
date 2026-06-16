@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="480.0" prefWidth="860.0"
+            xmlns="http://javafx.com/javafx/17.0.6"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.auto.CarWayScreensAuth$StartController"
+            stylesheets="@style.css"
+            styleClass="start-screen premium-start">
+
+    <center>
+        <HBox alignment="CENTER" spacing="40">
+            <padding>
+                <Insets top="48" right="40" bottom="48" left="40"/>
+            </padding>
+
+            <VBox spacing="18" prefWidth="400" alignment="CENTER_LEFT">
+                <Label text="CarWay" styleClass="start-logo"/>
+                <Label text="Каталог, покупка, кредит и сервис — в одном приложении."
+                       styleClass="start-lead" wrapText="true"/>
+
+                <HBox spacing="10">
+                    <VBox styleClass="start-feature-chip" alignment="CENTER" spacing="4">
+                        <padding>
+                            <Insets top="10" right="12" bottom="10" left="12"/>
+                        </padding>
+                        <Label text="Каталог" styleClass="start-chip-title"/>
+                        <Label text="15+ авто" styleClass="start-chip-desc"/>
+                    </VBox>
+                    <VBox styleClass="start-feature-chip" alignment="CENTER" spacing="4">
+                        <padding>
+                            <Insets top="10" right="12" bottom="10" left="12"/>
+                        </padding>
+                        <Label text="Сервис" styleClass="start-chip-title"/>
+                        <Label text="ТО и шины" styleClass="start-chip-desc"/>
+                    </VBox>
+                    <VBox styleClass="start-feature-chip" alignment="CENTER" spacing="4">
+                        <padding>
+                            <Insets top="10" right="12" bottom="10" left="12"/>
+                        </padding>
+                        <Label text="Аренда" styleClass="start-chip-title"/>
+                        <Label text="от 1 дня" styleClass="start-chip-desc"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <VBox spacing="14" alignment="CENTER" styleClass="start-auth-card">
+                <padding>
+                    <Insets top="28" right="32" bottom="28" left="32"/>
+                </padding>
+                <Label text="Добро пожаловать" styleClass="auth-title"/>
+                <Label text="Войдите или создайте аккаунт"
+                       styleClass="auth-subtitle" wrapText="true"/>
+                <Button text="Войти" onAction="#goToLogin" prefWidth="240"
+                        styleClass="button premium-cta"/>
+                <Button text="Регистрация" onAction="#goToSignup" prefWidth="240"
+                        styleClass="button premium-close"/>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

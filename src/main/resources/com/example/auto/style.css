@@ -304,6 +304,23 @@
     -fx-background-color: transparent;
 }
 
+.catalog-empty-state{
+    -fx-alignment: center;
+    -fx-padding: 48 24 48 24;
+}
+
+.catalog-empty-title{
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ede9fe;
+}
+
+.catalog-empty-hint{
+    -fx-font-size: 14px;
+    -fx-text-fill: #a78bfa;
+    -fx-text-alignment: center;
+}
+
 .checkout-selected-box{
     -fx-background-color: #221c30;
     -fx-background-radius: 10;

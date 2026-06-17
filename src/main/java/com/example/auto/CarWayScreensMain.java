@@ -389,6 +389,23 @@ public final class CarWayScreensMain {
     
         private void renderCars(List<CarWayData.Car> cars) {
             carTilePane.getChildren().clear();
+            if (cars.isEmpty()) {
+                VBox empty = new VBox(10);
+                empty.setAlignment(Pos.CENTER);
+                empty.getStyleClass().add("catalog-empty-state");
+                empty.setMinWidth(360);
+                empty.setMinHeight(260);
+                Label title = new Label("Ничего не найдено");
+                title.getStyleClass().add("catalog-empty-title");
+                Label hint = new Label("Измените фильтры или нажмите «Сбросить»");
+                hint.getStyleClass().add("catalog-empty-hint");
+                hint.setWrapText(true);
+                hint.setMaxWidth(320);
+                hint.setAlignment(Pos.CENTER);
+                empty.getChildren().addAll(title, hint);
+                carTilePane.getChildren().add(empty);
+                return;
+            }
             for (CarWayData.Car car : cars) {
                 carTilePane.getChildren().add(buildCarCard(car));
             }

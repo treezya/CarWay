@@ -428,10 +428,21 @@ public final class CarWayScreensExtra {
         }
     }
 
-    public static class CreditController {
+    public static class CreditController implements Initializable {
 
         private static final Logger LOG = CarWaySupport.AppLogger.get(CreditController.class);
+        private final CreditCalculatorService calculator = new CreditCalculatorService();
 
+        @FXML
+        private Label creditCarLabel;
+        @FXML
+        private Label creditLoanLabel;
+        @FXML
+        private Label creditMonthlyLabel;
+        @FXML
+        private Label creditOverpayLabel;
+        @FXML
+        private Label creditRateHintLabel;
         @FXML
         private TextField fullNameField;
         @FXML
@@ -444,6 +455,46 @@ public final class CarWayScreensExtra {
         private TextField initialPaymentField;
         @FXML
         private TextField monthsField;
+
+        @Override
+        public void initialize(URL url, ResourceBundle resourceBundle) {
+            creditRateHintLabel.setText(String.format(
+                    Locale.forLanguageTag("ru-RU"),
+                    "Ставка %.0f%% годовых, аннуитетный платёж",
+                    CreditCalculatorService.ANNUAL_RATE_PERCENT));
+            initialPaymentField.textProperty().addListener((obs, oldV, newV) -> updateCreditQuote());
+            monthsField.textProperty().addListener((obs, oldV, newV) -> updateCreditQuote());
+            updateCreditQuote();
+        }
+
+        private void updateCreditQuote() {
+            CheckoutDraft.Draft draft = CheckoutDraft.get();
+            Car car = SelectedCarContext.get();
+            if (draft == null) {
+                creditCarLabel.setText("Автомобиль: —");
+                creditLoanLabel.setText("Сумма кредита: —");
+                creditMonthlyLabel.setText("Ежемесячный платёж: —");
+                creditOverpayLabel.setText("Переплата: —");
+                return;
+            }
+
+            String carName = car != null ? car.getName() : "выбранный автомобиль";
+            creditCarLabel.setText("Автомобиль: " + carName + " · " + formatPrice(draft.totalRub()) + " ₽");
+
+            Long initial = CreditCalculatorService.parseLongOrNull(initialPaymentField.getText());
+            Integer months = CreditCalculatorService.parseIntOrNull(monthsField.getText());
+            if (initial == null || months == null) {
+                creditLoanLabel.setText("Сумма кредита: —");
+                creditMonthlyLabel.setText("Ежемесячный платёж: —");
+                creditOverpayLabel.setText("Переплата: —");
+                return;
+            }
+
+            CreditCalculatorService.Quote quote = calculator.calculate(draft.totalRub(), initial, months);
+            creditLoanLabel.setText("Сумма кредита: " + formatPrice(quote.loanAmountRub()) + " ₽");
+            creditMonthlyLabel.setText("Ежемесячный платёж: " + formatPrice(quote.monthlyPaymentRub()) + " ₽");
+            creditOverpayLabel.setText("Переплата: " + formatPrice(quote.overpaymentRub()) + " ₽");
+        }
 
         @FXML
         private void goBack(ActionEvent event) {
@@ -462,17 +513,17 @@ public final class CarWayScreensExtra {
                 return;
             }
 
-            CarWayData.CheckoutDraft.Draft draft = CarWayData.CheckoutDraft.get();
+            CheckoutDraft.Draft draft = CheckoutDraft.get();
             if (draft == null) {
                 showInfo("Нет данных заказа. Вернитесь в каталог и выберите автомобиль.");
                 return;
             }
 
-            CarWayData.SupabaseConfig cfg = CarWayData.SupabaseConfig.fromEnvOrNull();
+            SupabaseConfig cfg = SupabaseConfig.fromEnvOrNull();
             if (cfg != null && draft.carId() != null) {
                 try {
-                    CarWayData.SupabaseRestClient client = new CarWayData.SupabaseRestClient(cfg);
-                    client.createOrderWithCredit(new CarWayData.SupabaseRestClient.CreditOrderRequest(
+                    SupabaseRestClient client = new SupabaseRestClient(cfg);
+                    client.createOrderWithCredit(new SupabaseRestClient.CreditOrderRequest(
                             draft.carId(),
                             draft.customerName(),
                             draft.customerPhone(),
@@ -487,7 +538,7 @@ public final class CarWayScreensExtra {
                             parseLong(initialPaymentField.getText()),
                             parseInt(monthsField.getText())
                     ));
-                    CarWayData.CheckoutDraft.clear();
+                    CheckoutDraft.clear();
                     showInfo("Кредитная заявка отправлена и сохранена в Supabase.");
                     CarWaySupport.SceneNavigator.navigate(event, getClass(), "/com/example/auto/main-view.fxml");
                     return;
@@ -497,7 +548,7 @@ public final class CarWayScreensExtra {
                 }
             }
 
-            CarWayData.CheckoutDraft.clear();
+            CheckoutDraft.clear();
             showInfo("Кредитная заявка отправлена.");
             CarWaySupport.SceneNavigator.navigate(event, getClass(), "/com/example/auto/main-view.fxml");
         }
@@ -507,6 +558,10 @@ public final class CarWayScreensExtra {
             alert.setHeaderText(null);
             alert.setContentText(message);
             alert.showAndWait();
+        }
+
+        private static String formatPrice(long value) {
+            return NumberFormat.getIntegerInstance(new Locale("ru", "RU")).format(value);
         }
 
         private static boolean isBlank(String value) {

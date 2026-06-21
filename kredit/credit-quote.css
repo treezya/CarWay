@@ -1,0 +1,8 @@
+.credit-quote-box{
+    -fx-background-color: rgba(30,16,50,0.55);
+    -fx-background-radius: 10;
+    -fx-border-color: #5b21b6;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 12 14 12 14;
+}

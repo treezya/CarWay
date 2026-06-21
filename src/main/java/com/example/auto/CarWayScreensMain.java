@@ -233,6 +233,12 @@ public final class CarWayScreensMain {
                         customerPhoneField.getText(),
                         customerEmailField.getText()
                 ));
+                SelectedCarContext.set(
+                        selectedCar,
+                        0,
+                        customerNameField.getText(),
+                        customerPhoneField.getText()
+                );
                 openCreditScreen(event);
                 return;
             }

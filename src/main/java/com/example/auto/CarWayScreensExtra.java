@@ -501,6 +501,24 @@ public final class CarWayScreensExtra {
                 creditOverpayLabel.setText("Переплата: —");
                 return;
             }
+            if (initial < 0) {
+                creditLoanLabel.setText("Сумма кредита: —");
+                creditMonthlyLabel.setText("Ежемесячный платёж: —");
+                creditOverpayLabel.setText("Первый взнос не может быть отрицательным");
+                return;
+            }
+            if (months < 1) {
+                creditLoanLabel.setText("Сумма кредита: —");
+                creditMonthlyLabel.setText("Ежемесячный платёж: —");
+                creditOverpayLabel.setText("Срок кредита должен быть не меньше 1 месяца");
+                return;
+            }
+            if (initial > draft.totalRub()) {
+                creditLoanLabel.setText("Сумма кредита: —");
+                creditMonthlyLabel.setText("Ежемесячный платёж: —");
+                creditOverpayLabel.setText("Первый взнос больше суммы заказа");
+                return;
+            }
 
             CreditCalculatorService.Quote quote = calculator.calculate(draft.totalRub(), initial, months);
             creditLoanLabel.setText("Сумма кредита: " + formatPrice(quote.loanAmountRub()) + " ₽");
@@ -531,6 +549,21 @@ public final class CarWayScreensExtra {
                 return;
             }
 
+            long initialPayment = parseLong(initialPaymentField.getText());
+            int months = parseInt(monthsField.getText());
+            if (initialPayment < 0) {
+                showInfo("Первый взнос не может быть отрицательным.");
+                return;
+            }
+            if (months < 1) {
+                showInfo("Срок кредита должен быть не меньше 1 месяца.");
+                return;
+            }
+            if (initialPayment > draft.totalRub()) {
+                showInfo("Первый взнос не может превышать сумму заказа.");
+                return;
+            }
+
             SupabaseConfig cfg = SupabaseConfig.fromEnvOrNull();
             if (cfg != null && draft.carId() != null) {
                 try {
@@ -547,8 +580,8 @@ public final class CarWayScreensExtra {
                             passportField.getText().trim(),
                             parseLong(incomeField.getText()),
                             workPlaceField.getText().trim(),
-                            parseLong(initialPaymentField.getText()),
-                            parseInt(monthsField.getText())
+                            initialPayment,
+                            months
                     ));
                     CheckoutDraft.clear();
                     showInfo("Кредитная заявка отправлена и сохранена в Supabase.");

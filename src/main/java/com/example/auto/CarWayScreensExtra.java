@@ -436,6 +436,12 @@ public final class CarWayScreensExtra {
         @FXML
         private Label creditCarLabel;
         @FXML
+        private Label creditOrderSubtotalLabel;
+        @FXML
+        private Label creditOrderFeesLabel;
+        @FXML
+        private Label creditOrderTotalLabel;
+        @FXML
         private Label creditLoanLabel;
         @FXML
         private Label creditMonthlyLabel;
@@ -472,6 +478,9 @@ public final class CarWayScreensExtra {
             Car car = SelectedCarContext.get();
             if (draft == null) {
                 creditCarLabel.setText("Автомобиль: —");
+                creditOrderSubtotalLabel.setText("Автомобиль: —");
+                creditOrderFeesLabel.setText("Оформление: —");
+                creditOrderTotalLabel.setText("Итого: —");
                 creditLoanLabel.setText("Сумма кредита: —");
                 creditMonthlyLabel.setText("Ежемесячный платёж: —");
                 creditOverpayLabel.setText("Переплата: —");
@@ -479,7 +488,10 @@ public final class CarWayScreensExtra {
             }
 
             String carName = car != null ? car.getName() : "выбранный автомобиль";
-            creditCarLabel.setText("Автомобиль: " + carName + " · " + formatPrice(draft.totalRub()) + " ₽");
+            creditCarLabel.setText("Автомобиль: " + carName);
+            creditOrderSubtotalLabel.setText("Автомобиль: " + formatPrice(draft.subtotalRub()) + " ₽");
+            creditOrderFeesLabel.setText("Оформление: " + formatPrice(draft.feesRub()) + " ₽");
+            creditOrderTotalLabel.setText("Итого: " + formatPrice(draft.totalRub()) + " ₽");
 
             Long initial = CreditCalculatorService.parseLongOrNull(initialPaymentField.getText());
             Integer months = CreditCalculatorService.parseIntOrNull(monthsField.getText());

@@ -32,6 +32,12 @@
 
             <VBox spacing="10" maxWidth="420">
                 <Label fx:id="creditCarLabel" text="Автомобиль: —" styleClass="auth-subtitle" wrapText="true"/>
+                <VBox spacing="4" styleClass="credit-order-box">
+                    <Label text="Состав заказа" styleClass="field-label"/>
+                    <Label fx:id="creditOrderSubtotalLabel" text="Автомобиль: —" styleClass="order-row"/>
+                    <Label fx:id="creditOrderFeesLabel" text="Оформление: —" styleClass="order-row"/>
+                    <Label fx:id="creditOrderTotalLabel" text="Итого: —" styleClass="order-total"/>
+                </VBox>
                 <TextField fx:id="fullNameField" promptText="ФИО заёмщика" maxWidth="Infinity"/>
                 <TextField fx:id="passportField" promptText="Серия и номер паспорта" maxWidth="Infinity"/>
                 <TextField fx:id="incomeField" promptText="Ежемесячный доход (₽)" maxWidth="Infinity"/>

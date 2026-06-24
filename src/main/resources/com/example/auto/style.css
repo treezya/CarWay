@@ -196,6 +196,15 @@
     -fx-padding: 12 14 12 14;
 }
 
+.credit-order-box{
+    -fx-background-color: rgba(20,14,32,0.45);
+    -fx-background-radius: 10;
+    -fx-border-color: #4c3d6a;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 10 14 10 14;
+}
+
 .car-btn-details{
     -fx-background-color: #1c1828;
     -fx-border-color: #7c3aed;

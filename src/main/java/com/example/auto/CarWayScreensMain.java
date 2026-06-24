@@ -356,7 +356,13 @@ public final class CarWayScreensMain {
                 grid.add(value, 1, i);
             }
 
-            dialog.getDialogPane().setContent(grid);
+            Label stockBadge = new Label("В наличии");
+            stockBadge.getStyleClass().add("car-badge-stock");
+            HBox statusRow = new HBox(stockBadge);
+
+            VBox content = new VBox(10, statusRow, grid);
+
+            dialog.getDialogPane().setContent(content);
             dialog.getDialogPane().getButtonTypes().add(ButtonType.CLOSE);
             if (catalogScrollPane != null && catalogScrollPane.getScene() != null) {
                 dialog.getDialogPane().getStylesheets().addAll(catalogScrollPane.getScene().getStylesheets());
